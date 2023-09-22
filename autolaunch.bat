@@ -2,7 +2,7 @@
 cls
 
 :: Se déplacer vers le répertoire du projet 3DViewer
-cd "%userprofile%\Desktop\3DViewer-Release\3DViewer-Release"
+cd "%userprofile%\Desktop\3DViewer-main"
 
 :: Lancer le projet avec la commande npm run dev
 start cmd /k npm run dev
