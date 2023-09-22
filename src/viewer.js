@@ -69,17 +69,17 @@ export class Viewer {
       wireframe: false,
       skeleton: false,
       grid: false,
-      autoRotate: false,
+      autoRotate: true,
 
       // Lights
       punctualLights: true,
-      exposure: 0.0,
+      exposure: -0.25,
       toneMapping: LinearToneMapping,
       ambientIntensity: 0.3,
       ambientColor: '#FFFFFF',
       directIntensity: 0.8 * Math.PI, // TODO(#116)
       directColor: '#FFFFFF',
-      bgColor: '#191919',
+      bgColor: '#161616',
     };
 
     this.prevTime = 0;
