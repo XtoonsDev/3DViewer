@@ -502,6 +502,7 @@ export class Viewer {
   updateBackground () {
 
     this.backgroundColor.set(this.state.bgColor);
+	
 
   }
 
