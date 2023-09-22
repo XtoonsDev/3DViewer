@@ -1,0 +1,29 @@
+@echo off
+cls
+
+:: Emplacement local où vous souhaitez mettre à jour les fichiers "3DViewer-Release"
+set LOCAL_DIR=%userprofile%\Desktop\3DViewer-Release
+
+:: Lien du référentiel GitHub que vous souhaitez mettre à jour
+set GITHUB_REPO=https://github.com/XtoonsDev/3DViewer/archive/refs/heads/master.zip
+
+:: Vérifier si le répertoire "3DViewer-Release" existe
+if exist "%LOCAL_DIR%" (
+    echo Suppression du répertoire "3DViewer-Release" existant...
+    rmdir /s /q "%LOCAL_DIR%"
+)
+
+:: Télécharger l'archive ZIP depuis GitHub
+echo Téléchargement de l'archive ZIP depuis GitHub...
+curl -LJO "%GITHUB_REPO%"
+
+:: Décompresser l'archive ZIP dans le répertoire local
+echo Décompression de l'archive ZIP...
+powershell -command Expand-Archive -Path ".\master.zip" -DestinationPath "%LOCAL_DIR%" -Force
+
+:: Supprimer l'archive ZIP après la décompression
+del master.zip
+
+:: Votre script de mise à jour est maintenant terminé
+echo Mise à jour terminée. Appuyez sur une touche pour continuer...
+pause > nul
